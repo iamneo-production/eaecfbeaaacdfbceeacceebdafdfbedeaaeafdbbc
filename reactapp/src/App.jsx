@@ -16,7 +16,7 @@ class App extends React.Component {
             attempt:0,
             link:"/quiz",
             css:"start_btn",
-            text:"Start Quiz",
+            btnName:'Start Quiz',
             isHidden:"",
             questionProp : [
                 {
@@ -189,7 +189,7 @@ class App extends React.Component {
                     <Link to={{
                         pathname:this.state.link,
                         state:{questionsCorrect:this.state.questionsCorrect}
-                    }}><Button id="button"className={this.state.css} onClick={this.chgBtn} hidden={this.state.isHidden} value={this.state.text}></Button></Link>
+                    }}><Button id="button"className={this.state.css} onClick={this.chgBtn} hidden={this.state.isHidden} >{this.state.btnName}</Button></Link>
                 </div>
             </BrowserRouter>
         );
