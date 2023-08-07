@@ -1,6 +1,6 @@
 import React from "react";
 import Button from "../components/UI/Button/Button";
-import { shallow, mount } from "enzyme";
+import { shallow} from "enzyme";
 
 describe('Testing Button Component', () => {
 
