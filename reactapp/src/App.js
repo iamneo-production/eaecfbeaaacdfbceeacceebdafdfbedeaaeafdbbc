@@ -186,11 +186,13 @@ class App extends React.Component {
                             <Button id="button"className={this.state.css} onClick={redir} >Start Quiz</Button></center>
                             </div>} />
                     </Routes>
+                    { this.props.link!="/quiz" &&
                     <Link to={{
                         pathname:this.state.link,
                         state:{questionsCorrect:this.state.questionsCorrect}
-                    }}><Button id="button"className={this.state.css} onClick={this.chgBtn} hidden={this.state.isHidden} children={this.state.text}></Button></Link>
-                </div>
+                    }}><Button id="Button"className={this.state.css} onClick={this.chgBtn} hidden={this.state.isHidden} children={this.state.text}></Button></Link>
+                    }
+                    </div>
             </BrowserRouter>
         );
     }
