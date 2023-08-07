@@ -16,7 +16,7 @@ class App extends React.Component {
             attempt:0,
             link:"/quiz",
             css:"start_btn",
-            text:'Start Quiz',
+            btnName:'Start Quiz',
             isHidden:"",
             questionProp : [
                 {
@@ -81,9 +81,9 @@ class App extends React.Component {
 
     chgBtn=()=>{
         if(this.state.css==="start_btn"){
-            this.setState({css:"show_btn",link:"/result",text:"Show Results",isHidden:"hidden"})
+            this.setState({css:"show_btn",link:"/result",btnName:"Show Results",isHidden:"hidden"})
         }else if(this.state.link==="/result"){
-            this.setState({css:"start_btn",link:"/",text:"Show Results",isHidden:"hidden"})
+            this.setState({css:"start_btn",link:"/",btnName:"Show Results",isHidden:"hidden"})
         }
     }
 
@@ -96,7 +96,7 @@ class App extends React.Component {
             window.location.href = "/";
         }
 
-        console.log(this.text);
+        console.log(this.btnName);
         return(
             <BrowserRouter>
                 <div className="main">
@@ -186,13 +186,11 @@ class App extends React.Component {
                             <Button id="button"className={this.state.css} onClick={redir} >Start Quiz</Button></center>
                             </div>} />
                     </Routes>
-                    { this.props.link !="/quiz" &&
                     <Link to={{
                         pathname:this.state.link,
                         state:{questionsCorrect:this.state.questionsCorrect}
-                    }}><Button id="button"className={this.state.css} onClick={this.chgBtn} hidden={this.state.isHidden} children={this.state.text}></Button></Link>
-                    }
-                    </div>
+                    }}><Button id="button"className={this.state.css} onClick={this.chgBtn} hidden={this.state.isHidden} >{this.state.btnName}</Button></Link>
+                </div>
             </BrowserRouter>
         );
     }
