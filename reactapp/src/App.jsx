@@ -70,6 +70,9 @@ class App extends React.Component {
 
     handleAns=()=> {
         this.setState({questionsCorrect:this.state.questionsCorrect+1})
+        if(this.state.questionsCorrect==5){
+            this.setState({btnName:"Show Results"});
+        }
     }
 
     handleQues=()=>{
@@ -81,7 +84,7 @@ class App extends React.Component {
 
     chgBtn=()=>{
         if(this.state.css==="start_btn"){
-            this.setState({css:"show_btn",link:"/result",isHidden:"hidden"})
+            this.setState({css:"show_btn",link:"/result",btnName:"Start Quiz",isHidden:"hidden"})
         }else if(this.state.link==="/result"){
             this.setState({css:"start_btn",link:"/",btnName:"Show Results",isHidden:"hidden"})
         }
