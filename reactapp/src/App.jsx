@@ -16,7 +16,7 @@ class App extends React.Component {
             attempt:0,
             link:"/quiz",
             css:"start_btn",
-            text:"Start Quiz",
+            btnName:"Start Quiz",
             isHidden:"",
             questionProp : [
                 {
@@ -182,19 +182,14 @@ class App extends React.Component {
                             />
                         </div>
                         } />
-                        <Route path="/result" exact element={<div>
-                            <center>
-                                <div className='result'>
-                                    <Banner>You have answered {this.state.questionsCorrect}/5 Correctly</Banner>
-                                </div>
-                                <Button id="button"className={this.state.css} onClick={redir} >Start Quiz</Button>
-                            </center>
+                        <Route path="/result" exact element={<div><center><div className='result'><Banner>You have answered {this.state.questionsCorrect}/5 Correctly</Banner></div>
+                            <Button id="button"className={this.state.css} onClick={redir} >Start Quiz</Button></center>
                             </div>} />
                     </Routes>
                     <Link to={{
                         pathname:this.state.link,
                         state:{questionsCorrect:this.state.questionsCorrect}
-                    }}><Button id="button"className={this.state.css} onClick={this.chgBtn} hidden={this.state.isHidden} >{this.state.text}</Button></Link>
+                    }}><Button id="button"className={this.state.css} onClick={this.chgBtn} hidden={this.state.isHidden} >{this.state.btnName}</Button></Link>
                 </div>
             </BrowserRouter>
         );
