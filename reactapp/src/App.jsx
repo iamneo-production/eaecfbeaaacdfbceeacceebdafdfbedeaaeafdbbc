@@ -84,7 +84,7 @@ class App extends React.Component {
 
     chgBtn=()=>{
         if(this.state.css==="start_btn"){
-            this.setState({css:"show_btn",link:"/result",btnName:"Start Quiz",isHidden:"hidden"})
+            this.setState({css:"show_btn",link:"/result",btnName:"Start Qui",isHidden:"hidden"})
         }else if(this.state.link==="/result"){
             this.setState({css:"start_btn",link:"/",btnName:"Show Results",isHidden:"hidden"})
         }
@@ -189,6 +189,11 @@ class App extends React.Component {
                             <Button id="button"className={this.state.css} onClick={redir} >Start Quiz</Button></center>
                             </div>} />
                     </Routes>
+                    <Link to={{
+                        pathname:this.state.link,
+                        state:{questionsCorrect:this.state.questionsCorrect}
+                    }}><Button id="Button"className={this.state.css} onClick={this.chgBtn} hidden={this.state.isHidden} >{this.state.btnName}</Button></Link>
+               
                     <Link to={{
                         pathname:this.state.link,
                         state:{questionsCorrect:this.state.questionsCorrect}
