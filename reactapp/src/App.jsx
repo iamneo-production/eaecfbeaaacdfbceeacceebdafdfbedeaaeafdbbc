@@ -90,7 +90,7 @@ class App extends React.Component {
 
     
     render() {
-        const mockFunction = 1;
+        const   = 1;
 
         function redir(){
             window.location.href = "/";
